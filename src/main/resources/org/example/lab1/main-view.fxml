@@ -6,6 +6,7 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -50,60 +51,116 @@
          <children>
             <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
             <SplitPane prefHeight="743.0" prefWidth="1024.0" />
-          <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="784.0" style="-fx-background-color: grey;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="240.0">
+          <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="784.0" style="-fx-background-color: #b9b9b9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="240.0">
                <children>
-                  <Button layoutX="14.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#start" prefHeight="49.0" prefWidth="160.0" text=" Начать игру" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <Button layoutX="14.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#ready" prefHeight="49.0" prefWidth="160.0" text=" Начать игру" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Button>
-                  <Button layoutX="160.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#end" prefHeight="49.0" prefWidth="160.0" text="Закончить игру" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="0.0">
+                  <Button layoutX="160.0" mnemonicParsing="false" onMouseClicked="#pause" prefHeight="48.0" prefWidth="140.0" text="Пауза" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="0.0">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Button>
-                  <Button layoutX="320.0" layoutY="-1.0" mnemonicParsing="false" onMouseClicked="#pause" prefHeight="48.0" prefWidth="140.0" text="Пауза" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="320.0" AnchorPane.topAnchor="0.0">
+                  <Button layoutX="300.0" mnemonicParsing="false" onMouseClicked="#cont" prefHeight="48.0" prefWidth="157.0" text="Продолжить" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="0.0">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Button>
-                  <Button layoutX="460.0" layoutY="3.0" mnemonicParsing="false" onMouseClicked="#cont" prefHeight="48.0" prefWidth="157.0" text="Продолжить" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="460.0" AnchorPane.topAnchor="0.0">
+                  <Button layoutX="457.0" mnemonicParsing="false" onMouseClicked="#shoot" prefHeight="48.0" prefWidth="140.0" text="Выстрел">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Button>
                </children>
             </AnchorPane>
-          <AnchorPane maxWidth="240.0" minHeight="0.0" minWidth="240.0" prefHeight="743.0" prefWidth="240.0" style="-fx-background-color: grey;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+          <AnchorPane maxWidth="240.0" minHeight="0.0" minWidth="240.0" prefHeight="743.0" prefWidth="240.0" style="-fx-background-color: #b9b9b9;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <Label layoutX="14.0" layoutY="29.0" prefHeight="48.0" prefWidth="157.0" text="Счет:" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="28.0">
+                  <Label layoutX="15.0" layoutY="14.0" prefHeight="48.0" prefWidth="157.0" text="Счет:" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="14.0">
                      <font>
                         <Font name="Calibri" size="24.0" />
                      </font>
                   </Label>
-                  <Label layoutX="14.0" layoutY="174.0" prefHeight="48.0" prefWidth="157.0" text="Выстрелов:" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="128.0">
+                  <Label layoutX="107.0" layoutY="14.0" prefHeight="48.0" prefWidth="120.0" text="Выстрелов:" textAlignment="RIGHT" AnchorPane.leftAnchor="107.0" AnchorPane.topAnchor="14.0">
                      <font>
                         <Font name="Calibri" size="24.0" />
                      </font>
                   </Label>
-                  <Label fx:id="score" layoutX="185.0" layoutY="37.0" text="9" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="28.0">
+                  <Label fx:id="score1" layoutX="14.0" layoutY="222.0" prefHeight="40.0" prefWidth="89.0" style="-fx-background-color: #f2bbbb;" text="9" textAlignment="JUSTIFY" AnchorPane.rightAnchor="137.0" AnchorPane.topAnchor="222.0">
                      <font>
                         <Font size="28.0" />
                      </font>
                   </Label>
-                  <Label fx:id="shots" layoutX="178.0" layoutY="126.0" text="12" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="128.0">
+                  <Label fx:id="shots1" layoutX="112.0" layoutY="222.0" prefHeight="40.0" prefWidth="89.0" style="-fx-background-color: #f2bbbb;" text="12" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="222.0">
                      <font>
                         <Font size="28.0" />
                      </font>
                   </Label>
+                  <Label fx:id="score2" layoutX="14.0" layoutY="372.0" prefHeight="40.0" prefWidth="89.0" style="-fx-background-color: #bbf0cb;" text="9" textAlignment="JUSTIFY">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="shots2" layoutX="112.0" layoutY="372.0" prefHeight="40.0" prefWidth="89.0" style="-fx-background-color: #bbf0cb;" text="12">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="score3" layoutX="14.0" layoutY="527.0" prefHeight="40.0" prefWidth="89.0" style="-fx-background-color: #ebf0bb;" text="9" textAlignment="JUSTIFY">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="shots3" layoutX="112.0" layoutY="527.0" prefHeight="40.0" prefWidth="89.0" style="-fx-background-color: #ebf0bb;" text="12">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="score4" layoutX="14.0" layoutY="82.0" prefHeight="40.0" prefWidth="89.0" style="-fx-background-color: #bbe0f0;" text="9" textAlignment="JUSTIFY">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="shots4" layoutX="112.0" layoutY="82.0" prefHeight="40.0" prefWidth="89.0" style="-fx-background-color: #bbe0f0;" text="12">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="username1" editable="false" layoutX="12.0" layoutY="272.0" prefHeight="40.0" prefWidth="190.0" text="Твое имя">
+                     <font>
+                        <Font name="Courier New" size="12.0" />
+                     </font>
+                  </TextArea>
+                  <TextArea fx:id="username2" editable="false" layoutX="12.0" layoutY="425.0" prefHeight="40.0" prefWidth="190.0" text="Сногсшибательный рахат лукум" wrapText="true">
+                     <font>
+                        <Font name="Courier New" size="12.0" />
+                     </font>
+                  </TextArea>
+                  <TextArea fx:id="username3" editable="false" layoutX="12.0" layoutY="581.0" prefHeight="40.0" prefWidth="190.0" text="1000-7" wrapText="true">
+                     <font>
+                        <Font name="Courier New" size="12.0" />
+                     </font>
+                  </TextArea>
+                  <TextArea fx:id="username4" editable="false" layoutX="12.0" layoutY="129.0" prefHeight="40.0" prefWidth="190.0" text="ЧупаПупс" wrapText="true">
+                     <font>
+                        <Font name="Courier New" size="12.0" />
+                     </font>
+                  </TextArea>
                </children>
             </AnchorPane>
           <AnchorPane fx:id="mainPane" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="240.0" AnchorPane.topAnchor="0.0">
                <children>
                   <Circle fx:id="minicreep" fill="#ff471f" layoutX="676.0" layoutY="76.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
                   <Circle fx:id="creep" fill="#ffb41f" layoutX="536.0" layoutY="120.0" radius="60.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Polygon fx:id="player" fill="#f2bbbb" layoutX="56.0" layoutY="280.0" onMouseClicked="#shoot" points="-36.30579376220703, 39.0, 50.0, 40.0, 5.253910064697266, -34.253910064697266" rotate="90.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.bottomAnchor="374.74609375" AnchorPane.topAnchor="300.0" />
-                  <Circle fx:id="arrow" fill="#701fff" layoutX="63.0" layoutY="337.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Polygon fx:id="player1" fill="#f2bbbb" layoutX="68.0" layoutY="239.0" points="-36.30579376220703, 39.0, 50.0, 40.0, 5.253910064697266, -34.253910064697266" rotate="90.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.bottomAnchor="416.00000381469727" AnchorPane.topAnchor="204.74608993530273" />
+                  <Circle fx:id="arrow1" fill="#ff2121" layoutX="112.0" layoutY="242.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Polygon fx:id="player2" fill="#bbf0cb" layoutX="56.0" layoutY="369.0" points="-36.30579376220703, 39.0, 50.0, 40.0, 3.0, -30.0" rotate="-30.3" stroke="BLACK" strokeType="INSIDE" />
+                  <Polygon fx:id="player3" fill="#ebf0bb" layoutX="56.0" layoutY="523.0" points="-36.30579376220703, 39.0, 50.0, 40.0, 3.0, -30.0" rotate="-31.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Polygon fx:id="player4" fill="#bbe0f0" layoutX="56.0" layoutY="97.0" points="-36.30579376220703, 39.0, 50.0, 40.0, 5.253910064697266, -34.253910064697266" rotate="-30.3" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="arrow2" fill="#25ff21" layoutX="112.0" layoutY="385.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="arrow3" fill="#ecff21" layoutX="112.0" layoutY="539.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="arrow4" fill="#2161ff" layoutX="112.0" layoutY="111.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" />
                </children>
             </AnchorPane>
          </children>
